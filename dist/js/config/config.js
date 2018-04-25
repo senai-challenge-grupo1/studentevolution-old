@@ -6,7 +6,7 @@ angular.module("StudentEvolution", ["ngRoute"])
     controller: "homeCtrl"
   })
   .when("/login", {
-    templateUrl : "view/login.php",
+    templateUrl: "view/login.php",
     controller: "loginCtrl"
   });
 });

@@ -41,14 +41,14 @@
 		  </button>
 
 		  <div class="collapse navbar-collapse" id="navbarContent">
-		    <ul class="navbar-nav">
+		    <ul class="navbar-nav navbar-right">
 		      <li class="nav-item">
 		        <a class="nav-link" href="#!login">Login</a>
 		      </li>
 		    </ul>
 		  </div>
 		</nav>
-		<ng-view></ng-view>
+		<div class="container"><ng-view></ng-view></div>
 	</div>
 </body>
 </html>
