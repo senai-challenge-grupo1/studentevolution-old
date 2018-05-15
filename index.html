@@ -20,8 +20,13 @@
 	<script src="dist/angularjs-1.6.9/angular.min.js"></script>
 	<script src="dist/angularjs-1.6.9/angular-route.min.js"></script>
 
+	<!-- jQuery Alert -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="dist/css/studentevolution.css">
+	<link rel="stylesheet" type="text/css" href="dist/css/login.css">
 
 	<!-- JavaScript -->
 	<script type="text/javascript" src="dist/js/studentevolution.js"></script>
@@ -32,9 +37,10 @@
 	<!-- Controller -->
 	<script type="text/javascript" src="dist/js/controller/controller.js"></script>
 </head>
+
 <body ng-app="StudentEvolution">
 	<div class="fluid-container">
-		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark" ng-controller="navbarCtrl">
 		  <a class="navbar-brand" href="#">Student Evolution</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
@@ -43,12 +49,16 @@
 		  <div class="collapse navbar-collapse" id="navbarContent">
 		    <ul class="navbar-nav navbar-right">
 		      <li class="nav-item">
-		        <a class="nav-link" href="#!login">Login</a>
+		        <a class="nav-link" style="cursor: pointer;" ng-click="logar()">Login</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" target="_blank" href="https://craftpip.github.io/jquery-confirm/#custom-width">jQuery Confirm Website</a>
 		      </li>
 		    </ul>
 		  </div>
 		</nav>
 		<div class="container">
+			<div class="modal"></div>
 			<ng-view></ng-view>
 		</div>
 	</div>

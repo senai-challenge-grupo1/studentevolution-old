@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="../dist/login.css">
-</head>
-<body>
-	<div class="container">
-		<center>
-			<div class="box">
-				<h1 class="box-title">Login</h1>
-				<form class="box-form">
-					<input class="form-control" type="text" name="login" placeholder="Login">
-					<input class="form-control" type="password" name="senha" placeholder="Senha">
-					<input class="form-control btn btn-success" type="submit" value="Entrar">
-					<a class="forgot" href="forgot.html">Esqueci minha senha</a>
-				</form>
-			</div>
-		</center>
-	</div>
-</body>
-</html>
+<div class="form" ng-controller="cadastroCtrl">
+	<input class="form-control" type="text" ng-model="nome" placeholder="Nome">
+	<input class="form-control" type="text" ng-model="login" placeholder="Login">
+	<input class="form-control" type="text" ng-model="data_nascimento" placeholder="Data de Nascimento">
+	<input class="form-control" type="email" ng-model="email" placeholder="Email">
+	<input class="form-control" type="password" ng-model="senha" placeholder="Senha">
+</div>
