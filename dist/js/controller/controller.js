@@ -37,7 +37,7 @@ angular.module("StudentEvolution")
 	    		text: "Esqueceu sua senha?",
 	    		btnClass: 'btn btn-primary',
 	    		action: function() {
-	    			$.alert("Funcionou!");
+	    			$.alert("Que pena!");
 	    		}
 	    	},
 	    	Entrar: {
@@ -55,7 +55,6 @@ angular.module("StudentEvolution")
 	    				success: function(html) {
 	    					if(html == "1") {
 	    						$.alert('Login ou senha incorretos!');
-	    						return false;
 	    					} else if(html == "2") {
 	    						$.alert('Erro inesperado, contate o administrador!');
 	    					}
@@ -83,14 +82,8 @@ angular.module("StudentEvolution")
 	  	typeAnimated: true,
 	  	columnClass: 'col-md-5 col-md-offset-7',
 	    content: "url:view/cadastro.html",
-	    // closeIcon: true,
+	    closeIcon: true,
 	    backgroundDismiss: true,
-	    closeIcon: function(){
-        return false; // to prevent close the modal.
-        // or
-        return 'Cadastrar'; // set a button handler, 'aRandomButton' prevents close.
-	    },
-    	closeIcon: 'Cadastrar',
 	    buttons: {
 	    	Cadastrar: {
 	    		keys: ['enter'],
@@ -118,10 +111,8 @@ angular.module("StudentEvolution")
     // closeIcon: 'aRandomButton', // set a button handler
 	    				success: function(html) {
 	    					if(html == '0') {
-	    						return false;
 	    						$.alert('Nome já existente!');
 	    					} else if(html == '1') {
-	    						return false;
 	    						$.alert('Login já existente!');
 	    					} else if(html == '2') {
 	    						$.alert('Erro inesperado, contate o administrador!');
