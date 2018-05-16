@@ -8,7 +8,7 @@
 
 	try {
 		$array = array("login"=>$login, "senha"=>$senha);
-		$sql = "SELECT id FROM user WHERE login=:login and senha=:senha;";
+		$sql = "SELECT * FROM user WHERE login=:login and senha=:senha;";
 		$stmt = $conexao->getCon()->prepare($sql);
 		$stmt->execute($array);
 
@@ -18,29 +18,28 @@
 		}
 
 		if($linha != null) {
-			$array = array("id"=>$linha['id']);
-			$sql = "SELECT * FROM user WHERE id=:id;";
-			$stmt = $conexao->getCon()->prepare($sql);
-			$stmt->execute($array);
+			session_start();
+			
+			$_SESSION['id'] = $linha['id'];
+			$_SESSION['nome'] = $linha['nome'];
+			$_SESSION['login'] = $linha['login'];
+			$_SESSION['email'] = $linha['email'];
 
-			$linha = null;
-			foreach($stmt as $value) {
-				$linha = $value;
-			}
+			$data = explode('-', $linha['data_nascimento']);
+			$_SESSION['data_nascimento'] = $data[0].'/'.$data[1].'/'.$data[2];
 
-			if($linha != null) {
-				session_start();
-				
-				$_SESSION['nome'] = $linha['nome'];
-				$_SESSION['login'] = $linha['login'];
-				$_SESSION['email'] = $linha['email'];
-				$_SESSION['data_nascimento'] = $linha['data_nascimento'];
-			}
+			echo '{
+				"id": "'.$_SESSION['id'].'",
+				"nome": "'.$_SESSION['nome'].'",
+				"login": "'.$_SESSION['login'].'",
+				"email": "'.$_SESSION['email'].'",
+				"dataNascimento": "'.$_SESSION['data_nascimento'].'"
+			}';
 		} else {
-			echo "Login ou senha incorretos!";
+			echo '1';
 		}
 	} catch(PDOException $e) {
-		echo $e;
+		echo '2';
 	}
 
 ?>

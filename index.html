@@ -40,25 +40,34 @@
 
 <body ng-app="StudentEvolution">
 	<div class="fluid-container">
-		<nav class="navbar navbar-expand-sm navbar-dark bg-dark" ng-controller="navbarCtrl">
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 		  <a class="navbar-brand" href="#">Student Evolution</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 
 		  <div class="collapse navbar-collapse" id="navbarContent">
-		    <ul class="navbar-nav navbar-right">
-		      <li class="nav-item">
-		        <a class="nav-link" style="cursor: pointer;" ng-click="logar()">Login</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" target="_blank" href="https://craftpip.github.io/jquery-confirm/#custom-width">jQuery Confirm Website</a>
-		      </li>
-		    </ul>
+		    
 		  </div>
+		  <ul class="navbar-nav">
+	      <li class="nav-item" ng-if="!auth">
+	        <a class="nav-link" style="cursor: pointer;" ng-click="signin()">Login</a>
+	      </li>
+	      <li class="nav-item" ng-if="!auth">
+	        <a class="nav-link" style="cursor: pointer;" ng-click="signup()">Cadastro</a>
+	      </li>
+	      <li class="nav-item" ng-if="auth">
+	        <a class="nav-link" style="cursor: pointer;">{{user.nome}}</a>
+	      </li>
+	      <li class="nav-item" ng-if="auth">
+	        <a class="nav-link" style="cursor: pointer;" ng-click="signout()">Sair</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" target="_blank" href="https://craftpip.github.io/jquery-confirm/#alert">jQuery Confirm Website</a>
+	      </li>
+	    </ul>
 		</nav>
 		<div class="container">
-			<div class="modal"></div>
 			<ng-view></ng-view>
 		</div>
 	</div>
