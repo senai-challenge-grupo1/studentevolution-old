@@ -25,8 +25,8 @@
 			$_SESSION['login'] = $linha['login'];
 			$_SESSION['email'] = $linha['email'];
 
-			$data = explode('-', $linha['data_nascimento']);
-			$_SESSION['data_nascimento'] = $data[0].'/'.$data[1].'/'.$data[2];
+			$data = date('d/m/Y', strtotime($linha['data_nascimento']));
+			$_SESSION['data_nascimento'] = $data;
 
 			echo '{
 				"id": "'.$_SESSION['id'].'",
@@ -36,10 +36,9 @@
 				"dataNascimento": "'.$_SESSION['data_nascimento'].'"
 			}';
 		} else {
-			echo '1';
+			echo '1'; // Caso senha ou login incorretos
 		}
 	} catch(PDOException $e) {
-		echo '2';
+		echo '2'; // Caso tenha erros de SQL
 	}
-
 ?>

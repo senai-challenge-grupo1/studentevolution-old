@@ -4,5 +4,9 @@ angular.module("StudentEvolution", ["ngRoute"])
   .when("/", {
     templateUrl: "view/home.html",
     controller: "homeCtrl"
+  })
+  .when("/ajuda", {
+    templateUrl: "view/ajuda.html",
+    controller: "ajudaCtrl"
   });
 });

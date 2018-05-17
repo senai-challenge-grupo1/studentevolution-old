@@ -8,7 +8,7 @@
 	$email = $_POST['email'];
 	$senha = md5($_POST['senha']);
 	$data = explode('/', $_POST['dataNascimento']);
-	$dataNascimento = $data[0].'-'.$data[1].'-'.$data[2];
+	$dataNascimento = date('Y-m-d', strtotime($data[2].'-'.$data[1].'-'.$data[0]));
 
 	try {
 		$array = array("nome"=>$nome);
@@ -48,7 +48,7 @@
 		$stmt = $conexao->getCon()->prepare($sql);
 		$stmt->execute($array);
 
-		$array = array("login"=>$linha['login']);
+		$array = array("login"=>$login);
 		$sql = "SELECT * FROM user WHERE login=:login";
 		$stmt = $conexao->getCon()->prepare($sql);
 		$stmt->execute($array);
@@ -64,9 +64,7 @@
 		$_SESSION['nome'] = $linha['nome'];
 		$_SESSION['login'] = $linha['login'];
 		$_SESSION['email'] = $linha['email'];
-		
-		$data = explode('-', $linha['data_nascimento']);
-		$_SESSION['data_nascimento'] = $data[0].'/'.$data[1].'/'.$data[2];
+		$_SESSION['data_nascimento'] = date('d/m/Y', strtotime($linha['data_nascimento']));
 
 		echo '{
 			"id": "'.$_SESSION['id'].'",

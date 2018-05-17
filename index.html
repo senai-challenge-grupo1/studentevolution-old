@@ -26,7 +26,7 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="dist/css/studentevolution.css">
-	<link rel="stylesheet" type="text/css" href="dist/css/login.css">
+	<link rel="stylesheet" type="text/css" href="dist/css/home.css">
 
 	<!-- JavaScript -->
 	<script type="text/javascript" src="dist/js/studentevolution.js"></script>
@@ -50,6 +50,9 @@
 		    
 		  </div>
 		  <ul class="navbar-nav">
+	      <li class="nav-item">
+	        <a class="nav-link" style="cursor: pointer;" ng-href="#!ajuda">Ajuda</a>
+	      </li>
 	      <li class="nav-item" ng-if="!auth">
 	        <a class="nav-link" style="cursor: pointer;" ng-click="signin()">Login</a>
 	      </li>
@@ -67,9 +70,7 @@
 	      </li> -->
 	    </ul>
 		</nav>
-		<div class="container">
-			<ng-view></ng-view>
-		</div>
+		<ng-view></ng-view>
 	</div>
 </body>
 </html>

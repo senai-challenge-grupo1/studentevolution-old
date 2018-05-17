@@ -29,13 +29,12 @@ angular.module("StudentEvolution")
 	  	typeAnimated: true,
 	  	columnClass: 'col-md-5 col-md-offset-7',
 	    content: "url:view/login.html",
-	    controller: "loginCtrl",
 	    closeIcon: true,
 	    backgroundDismiss: true,
 	    buttons: {
 	    	forgot: {
 	    		text: "Esqueceu sua senha?",
-	    		btnClass: 'btn btn-primary',
+	    		btnClass: 'btn btn-default',
 	    		action: function() {
 	    			$.alert("Que pena!");
 	    		}
@@ -102,13 +101,6 @@ angular.module("StudentEvolution")
 	    				cache: false,
 	    				method: 'POST',
 	    				data: dados,
-	    				// closeIcon: function(){
-    //     return false; // to prevent close the modal.
-    //     // or
-    //     return 'aRandomButton'; // set a button handler, 'aRandomButton' prevents close.
-    // },
-    // // or
-    // closeIcon: 'aRandomButton', // set a button handler
 	    				success: function(html) {
 	    					if(html == '0') {
 	    						$.alert('Nome já existente!');
@@ -128,8 +120,7 @@ angular.module("StudentEvolution")
 	    				}
 	    			});
           }
-	    	},
-	    	close: function() {}
+	    	}
 	    }
     });
   };
@@ -139,12 +130,17 @@ angular.module("StudentEvolution")
   		url: 'controller/logoutController.php',
   		success: function(html) {
   			$rootScope.auth = false;
+  			$rootScope.user = '';
   			$rootScope.$apply();
   		}
   	});
   };
 }])
 
-.controller("homeCtrl", function($scope) {
-	
-});
+.controller("homeCtrl", ['$rootScope', function($scope) {
+	// $scope
+}])
+
+.controller("ajudaCtrl", ['$rootScope', function($scope) {
+	$scope.ajuda = "Minha ajuda";
+}]);
