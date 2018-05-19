@@ -1,0 +1,57 @@
+<div id="main-wrapper">
+	<div class="container-fluid">
+		<div class="row">                    
+			<div class="col-lg-4 col-xlg-3 col-md-5">
+				<div class="card">
+					<div class="card-block">
+						<br>
+						<center> <img src="dist/img/profile.png" width="150" height="150">
+							<h4 class="card-title">{{user.nome}}</h4>  
+							<h6 class="card-title">{{user.login}}</h6>    
+						</center> 
+						<br>                               
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-8 col-xlg-9 col-md-7">
+				<div class="card">                            
+					<center><h4 class="card-title">Perfil de Usuário</h4></center>
+					<br>
+					<div class="card-block">
+						<form class="form-horizontal form-material">
+							<div class="form-group">
+								<label for="nome" class="col-md-12">Nome</label>
+								<div class="col-md-12">
+									<input type="text" placeholder="Nome do Usuário" class="form-control form-control-line" id="nome" ng-value="user.nome">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="login" class="col-md-12">Login</label>
+								<div class="col-md-12">
+									<input type="text" class="form-control form-control-line" placeholder="Login do Usuário" id="login" ng-value="user.login">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="email" class="col-md-12">Email</label>
+								<div class="col-md-12">
+									<input type="text" class="form-control form-control-line" placeholder="Email do Usuário" id="email" ng-value="user.email">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="dataNascimento" class="col-md-12">Data de Nascimento</label>
+								<div class="col-md-12">
+									<input type="text" placeholder="Data de Nascimento do Usuário" class="form-control form-control-line" id="dataNascimento" ng-value="user.dataNascimento">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<button class="btn btn-success">Atualizar Dados</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>                    
+		</div>                
+	</div>
+</div>

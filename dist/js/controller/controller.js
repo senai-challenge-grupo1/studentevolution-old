@@ -141,6 +141,10 @@ angular.module("StudentEvolution")
 	// $scope
 }])
 
+.controller("perfilCtrl", ['$rootScope', function($scope) {
+	$('#dataNascimento').mask('00/00/0000');
+}])
+
 .controller("ajudaCtrl", ['$rootScope', function($scope) {
 	$scope.ajuda = "Minha ajuda";
 }]);
