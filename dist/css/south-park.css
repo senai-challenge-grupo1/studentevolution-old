@@ -20,8 +20,11 @@ body {
       content: "";
       width: 0;
       height: 0; }
+    @media (min-width: 720px) {
+      body .container .boys-container {
+        min-width: 660px; } }
     body .container .boys-container {
-      min-width: 660px;
+      width: 100%;
       height: 210px;
       margin: 0 auto; }
       body .container .boys-container .stan, body .container .boys-container .kyle, body .container .boys-container .cartman, body .container .boys-container .kenny {
@@ -53,6 +56,9 @@ body {
     .container .eye.right:before {
       left: 7px; }
 
+@media (max-width: 720px) {
+  .contayner .eye {
+    left: calc(50% - (33px / 2)); } }
 .container .mouth {
   left: calc(50% - 10px);
   bottom: 5px;
@@ -213,6 +219,28 @@ body {
       .stan .bobble span:nth-of-type(7) {
         transform: rotate(180deg); }
 
+@media (max-width: 720px) {
+  .stan {
+    height: 60px;
+    width: 60px; }
+    .stan .head {
+      top: -30px;
+      left: calc(50% - 30px);
+      width: 60px;
+      height: 60px; }
+      .stan .head:before {
+        border-top: 23px solid #5162AA;
+        height: 35px; }
+    .stan .hat {
+      width: 64px; }
+    .stan .bobble {
+      top: calc(-73px / 2);
+      left: calc(50% - 7px);
+      height: 14px;
+      width: 14px; }
+      .stan .bobble span {
+        left: calc(50% - 1px);
+        width: 2px; } }
 .kyle {
   /*left: calc(42% - (112px / 2));*/
   height: 120px;
