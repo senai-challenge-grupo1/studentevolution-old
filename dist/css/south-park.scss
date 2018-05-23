@@ -8,9 +8,6 @@ body {
 	/*overflow: hidden;*/
 	/*background-color: #A1E3F1; */
 	/*background-image: linear-gradient(to bottom, #A1E3F1 0%,#ffffff 60%);*/
-	background: url("../img/background.jpg") no-repeat;
-	background-size: cover;
-	background-position: center;
 
 	.container {
 		/*position: absolute;*/
@@ -44,6 +41,14 @@ body {
 				}
 			}
 		}
+	}
+
+	.container-home {
+		max-width: 100vw;
+    height: 100vh;
+		background: url("../img/background.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
 }
 
@@ -81,13 +86,13 @@ body {
 		}
 	}
 }
-
+/*
 @media(max-width: 720px) {
 	.contayner .eye {
 		left: calc(50% - (33px / 2));
 	}
 }
-
+*/
 .container .mouth {
 	left: calc(50% - 10px);
 	bottom: 5px;
@@ -303,7 +308,7 @@ $stan-head-height: 120px;
 		}
 	}
 }
-
+/*
 @media(max-width: 720px) {
 	.stan {
 		height: 60px;
@@ -315,7 +320,7 @@ $stan-head-height: 120px;
 			width: 60px;
 			height: 60px;
 
-			&:before /*hat*/ {
+			&:before {
 				border-top: 23px solid #5162AA;
 				height: 35px;
 			}
@@ -337,7 +342,7 @@ $stan-head-height: 120px;
 			}
 		}
 	}
-}
+}*/
 
 $kyle-width: 112px;
 $kyle-height: 120px;

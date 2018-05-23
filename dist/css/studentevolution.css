@@ -2,3 +2,9 @@
 	float: right !important;
   margin-right: -15px;
 }
+
+footer.navbar {
+  position:	fixed;
+  bottom: 0;
+  width: 100%;
+}

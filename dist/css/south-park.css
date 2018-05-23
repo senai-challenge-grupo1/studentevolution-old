@@ -6,10 +6,7 @@ html {
 body {
   /*overflow: hidden;*/
   /*background-color: #A1E3F1; */
-  /*background-image: linear-gradient(to bottom, #A1E3F1 0%,#ffffff 60%);*/
-  background: url("../img/background.jpg") no-repeat;
-  background-size: cover;
-  background-position: center; }
+  /*background-image: linear-gradient(to bottom, #A1E3F1 0%,#ffffff 60%);*/ }
   body .container {
     /*position: absolute;*/
     padding: 0;
@@ -31,6 +28,12 @@ body {
         position: relative; }
         body .container .boys-container .stan *, body .container .boys-container .kyle *, body .container .boys-container .cartman *, body .container .boys-container .kenny * {
           position: absolute; }
+  body .container-home {
+    max-width: 100vw;
+    height: 100vh;
+    background: url("../img/background.jpg") no-repeat;
+    background-size: cover;
+    background-position: center; }
 
 .container .eye {
   left: calc(50% - 33px);
@@ -56,9 +59,13 @@ body {
     .container .eye.right:before {
       left: 7px; }
 
-@media (max-width: 720px) {
-  .contayner .eye {
-    left: calc(50% - (33px / 2)); } }
+/*
+@media(max-width: 720px) {
+	.contayner .eye {
+		left: calc(50% - (33px / 2));
+	}
+}
+*/
 .container .mouth {
   left: calc(50% - 10px);
   bottom: 5px;
@@ -219,28 +226,41 @@ body {
       .stan .bobble span:nth-of-type(7) {
         transform: rotate(180deg); }
 
-@media (max-width: 720px) {
-  .stan {
-    height: 60px;
-    width: 60px; }
-    .stan .head {
-      top: -30px;
-      left: calc(50% - 30px);
-      width: 60px;
-      height: 60px; }
-      .stan .head:before {
-        border-top: 23px solid #5162AA;
-        height: 35px; }
-    .stan .hat {
-      width: 64px; }
-    .stan .bobble {
-      top: calc(-73px / 2);
-      left: calc(50% - 7px);
-      height: 14px;
-      width: 14px; }
-      .stan .bobble span {
-        left: calc(50% - 1px);
-        width: 2px; } }
+/*
+@media(max-width: 720px) {
+	.stan {
+		height: 60px;
+		width: 60px;
+
+		.head {
+			top: -30px;
+			left: calc(50% - 30px);
+			width: 60px;
+			height: 60px;
+
+			&:before {
+				border-top: 23px solid #5162AA;
+				height: 35px;
+			}
+		}
+
+		.hat {
+			width: 60px + 4px;
+		}
+
+		.bobble {
+			top: calc(-73px / 2);
+			left: calc(50% - 7px);
+			height: 14px;
+			width: 14px;
+
+			span{
+				left: calc(50% - 1px);
+				width: 2px;
+			}
+		}
+	}
+}*/
 .kyle {
   /*left: calc(42% - (112px / 2));*/
   height: 120px;
